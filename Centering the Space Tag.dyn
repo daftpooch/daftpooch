@@ -1,0 +1,538 @@
+{
+  "Uuid": "4f9ef4d2-43ae-4102-9984-85bb1816d8b6",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Centering the Space Tag",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategoryInView, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "ceff8de47f314d3b84fceb73786918cd",
+      "Inputs": [
+        {
+          "Id": "6828dfda225c49048a708e97a31d1a5e",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "14aebd5e3bf347f69b98d793e4eed250",
+          "Name": "View",
+          "Description": "The View",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cb677ab132214b2384310ec4c3c62271",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category in the specified view from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Quasar.ViewUtility.ActiveView",
+      "Id": "293b02d3970c4e61abcdd4031b34d3a3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "bdee597755fe429283c25d2124571e40",
+          "Name": "ActiveView",
+          "Description": "Return ActiveView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Current Document Active View\n\nViewUtility.ActiveView ( ): Element"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 439,
+      "SelectedString": "OST_MEPSpaces",
+      "NodeType": "ExtensionNode",
+      "Id": "d3a27a0db2d5401abf34586ce23930f1",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d2c5516bf7f44372b26563a38f91285d",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "QuasarII.MEPSpaces.CenterSpace@Revit.Elements.Element[]",
+      "Id": "7359e317aa324819a4c351aaf9463b18",
+      "Inputs": [
+        {
+          "Id": "eb3a30e82c0442aca7946d9fb9aea5de",
+          "Name": "Spaces",
+          "Description": "A list of Space Elements.\n\nElement[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "adf8d8c26cac457e91db979df421ac15",
+          "Name": "CenteredSpaces",
+          "Description": "A list of centered Space Elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Relocate Spaces' location points to the center of the Spaces.\n\nMEPSpaces.CenterSpace (Spaces: Element[]): Element[]"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategoryInView, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "c576510002f64c0bb04112a5df4f1e92",
+      "Inputs": [
+        {
+          "Id": "00d8e872b5004dff939ef3d41ca336f6",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c9c6a028d70147dea8ad902f52e6645e",
+          "Name": "View",
+          "Description": "The View",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3603d09dacc849b58a1c4382c3d55f35",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category in the specified view from the model."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Quasar.ViewUtility.ActiveView",
+      "Id": "f9d8ebfcd47a4a78954db748e5f2843c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ab3294430109423db97bfd2e4a00e680",
+          "Name": "ActiveView",
+          "Description": "Return ActiveView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Current Document Active View\n\nViewUtility.ActiveView ( ): Element"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 438,
+      "SelectedString": "OST_MEPSpaceTags",
+      "NodeType": "ExtensionNode",
+      "Id": "2619b93e96b6485ab65f98c688c32987",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "59eb703ff55a44a5a79214c16fa50739",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "QuasarII.MEPSpaces.SpaceTagToSpace@Revit.Elements.Element,Revit.Elements.Element[]",
+      "Id": "02210c6de7b14d76b89d54c7cacaab35",
+      "Inputs": [
+        {
+          "Id": "710dc3af14b14266ad327cd4c313580b",
+          "Name": "view",
+          "Description": "A View Element.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bc27bd32caff40519d0e58a7904b3c17",
+          "Name": "SpaceTags",
+          "Description": "A list of SpaceTag.\n\nElement[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b7c304780c254dfab80cb594ceb9a4ec",
+          "Name": "Results",
+          "Description": "A list of relocated SpaceTag.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Relocate spaces' tags to the spaces' location points in given View.\n\nMEPSpaces.SpaceTagToSpace (view: Element, SpaceTags: Element[]): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Quasar.ViewUtility.ActiveView",
+      "Id": "56d325d04eb1431aa0b3f52931911ef8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4f0a4d3cfe3f408287a62c30d3e036c8",
+          "Name": "ActiveView",
+          "Description": "Return ActiveView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Current Document Active View\n\nViewUtility.ActiveView ( ): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "43fbb704-a454-4470-910a-f3daac166d4a",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "da7ed126e48e4d6cb4be2c3de8173a1b",
+      "Inputs": [
+        {
+          "Id": "c6ae8c895db6442c8f1b2d2f8225e49a",
+          "Name": "anyData",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "71fb2ec017c24dd9b7049a4033f738ff",
+          "Name": "secondsToWait",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5efdc37e6cb34501939bba4d2c159565",
+          "Name": "anyData",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": ""
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "4",
+      "Id": "95d73beb52fc4856956334867e4b1f2f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "cadd7efc4ed54a558f846fe79e12be74",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "cb677ab132214b2384310ec4c3c62271",
+      "End": "eb3a30e82c0442aca7946d9fb9aea5de",
+      "Id": "fc642b507ede45f1b3cb4319a6f08d23"
+    },
+    {
+      "Start": "bdee597755fe429283c25d2124571e40",
+      "End": "14aebd5e3bf347f69b98d793e4eed250",
+      "Id": "f174570ea6f346b7bcfac9ee5c83eef6"
+    },
+    {
+      "Start": "d2c5516bf7f44372b26563a38f91285d",
+      "End": "6828dfda225c49048a708e97a31d1a5e",
+      "Id": "ec244fccd383408c8c5f4e1a76b61d98"
+    },
+    {
+      "Start": "3603d09dacc849b58a1c4382c3d55f35",
+      "End": "c6ae8c895db6442c8f1b2d2f8225e49a",
+      "Id": "8df4a672ef70493f96f891f9bbabbc65"
+    },
+    {
+      "Start": "ab3294430109423db97bfd2e4a00e680",
+      "End": "c9c6a028d70147dea8ad902f52e6645e",
+      "Id": "97801d20eb71484aaf527c45c18e30f3"
+    },
+    {
+      "Start": "59eb703ff55a44a5a79214c16fa50739",
+      "End": "00d8e872b5004dff939ef3d41ca336f6",
+      "Id": "45d982b3fd564600a7b220ab04b1ba97"
+    },
+    {
+      "Start": "4f0a4d3cfe3f408287a62c30d3e036c8",
+      "End": "710dc3af14b14266ad327cd4c313580b",
+      "Id": "b5f1e931c2634687843516cac9316a5d"
+    },
+    {
+      "Start": "5efdc37e6cb34501939bba4d2c159565",
+      "End": "bc27bd32caff40519d0e58a7904b3c17",
+      "Id": "ae63fcfee8b048d78a4e89e90163c6a6"
+    },
+    {
+      "Start": "cadd7efc4ed54a558f846fe79e12be74",
+      "End": "71fb2ec017c24dd9b7049a4033f738ff",
+      "Id": "e313789768144a158757151e168f64f3"
+    }
+  ],
+  "Dependencies": [
+    "43fbb704-a454-4470-910a-f3daac166d4a"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Quasar",
+      "Version": "2.1.3",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "293b02d3970c4e61abcdd4031b34d3a3",
+        "f9d8ebfcd47a4a78954db748e5f2843c",
+        "56d325d04eb1431aa0b3f52931911ef8"
+      ]
+    },
+    {
+      "Name": "QuasarII",
+      "Version": "2021.25.101",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "7359e317aa324819a4c351aaf9463b18",
+        "02210c6de7b14d76b89d54c7cacaab35"
+      ]
+    },
+    {
+      "Name": "Bakery",
+      "Version": "2019.5.8",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "da7ed126e48e4d6cb4be2c3de8173a1b"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category in View",
+        "Id": "ceff8de47f314d3b84fceb73786918cd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 103.35973480825481,
+        "Y": 301.23194361320543
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ViewUtility.ActiveView",
+        "Id": "293b02d3970c4e61abcdd4031b34d3a3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -129.21412345868785,
+        "Y": 391.85762444055536
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "d3a27a0db2d5401abf34586ce23930f1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -146.76330364140716,
+        "Y": 244.05902397811226
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "MEPSpaces.CenterSpace",
+        "Id": "7359e317aa324819a4c351aaf9463b18",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 546.56698450055137,
+        "Y": 295.13430190381132
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category in View",
+        "Id": "c576510002f64c0bb04112a5df4f1e92",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 105.29279634163538,
+        "Y": 563.161781386258
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ViewUtility.ActiveView",
+        "Id": "f9d8ebfcd47a4a78954db748e5f2843c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -127.2810619253076,
+        "Y": 653.787462213608
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "2619b93e96b6485ab65f98c688c32987",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -149.1274306864546,
+        "Y": 516.01563510083
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "MEPSpaces.SpaceTagToSpace",
+        "Id": "02210c6de7b14d76b89d54c7cacaab35",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 475.29874884052867,
+        "Y": 665.10897426878853
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "ViewUtility.ActiveView",
+        "Id": "56d325d04eb1431aa0b3f52931911ef8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 131.06448076946026,
+        "Y": 716.14673113993138
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Wait Then Passthrough",
+        "Id": "da7ed126e48e4d6cb4be2c3de8173a1b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 452.5497112431791,
+        "Y": 510.01738055896726
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "95d73beb52fc4856956334867e4b1f2f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 354.56233080139145,
+        "Y": 564.900502578346
+      }
+    ],
+    "Annotations": [],
+    "X": 125.5990229919413,
+    "Y": 59.764957238442378,
+    "Zoom": 0.52180647642493372
+  }
+}
